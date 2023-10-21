@@ -15,10 +15,14 @@ LEDS = [LED_GREEN, LED_AMBER, LED_RED]
 SELECTED_LED_IDX = 0
 
 def onButtonPressed():
+    global SELECTED_LED_IDX
+    
     SELECTED_LED_IDX = (SELECTED_LED_IDX + 1) % len(LEDS)
     turnOnSelectedLed()
 
 def turnOnSelectedLed():
+    global SELECTED_LED_IDX
+
     for led in LEDS:
         led.off()
 
